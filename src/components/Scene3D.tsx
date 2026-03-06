@@ -20,7 +20,7 @@ function WireframeRoom() {
 
   return (
     <Float speed={0.8} rotationIntensity={0.05} floatIntensity={0.3}>
-      <group ref={groupRef} scale={1.1} position={[0, -0.3, 0]}>
+      <group ref={groupRef} scale={1.4} position={[0.3, -0.3, 0]}>
         {/* Floor */}
         <mesh position={[0, -1.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
           <planeGeometry args={[4, 3.5]} />
@@ -227,7 +227,7 @@ function Particles() {
 export default function Scene3D() {
   return (
     <div className="absolute inset-0 z-0">
-      <Canvas camera={{ position: [3, 1.5, 5], fov: 40 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [3.5, 1.8, 5.5], fov: 42 }} dpr={[1, 2]}>
         <ambientLight intensity={0.5} />
         <pointLight position={[5, 5, 5]} intensity={0.2} color="#1a7a8a" />
         <pointLight position={[-5, -3, 3]} intensity={0.15} color="#b87a4a" />
