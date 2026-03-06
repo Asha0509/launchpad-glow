@@ -1,3 +1,4 @@
+// @ts-nocheck - Deno runtime, types not available in VS Code
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
@@ -159,10 +160,11 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 200,
     });
-  } catch (error) {
-    console.error("Error sending welcome email:", error);
+  } catch (error: unknown) {
+    const err = error as Error;
+    console.error("Error sending welcome email:", err);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: err.message }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
