@@ -174,9 +174,6 @@ serve(async (req) => {
                               <td style="font-size: 15px; color: #374151; padding: 6px 0;">📅 &nbsp;&nbsp;March 29, 2026</td>
                             </tr>
                             <tr>
-                              <td style="font-size: 15px; color: #374151; padding: 6px 0;">📍 &nbsp;&nbsp;Starting with Hyderabad, Bengaluru & Mumbai</td>
-                            </tr>
-                            <tr>
                               <td style="font-size: 15px; color: #374151; padding: 6px 0;">🛋️ &nbsp;&nbsp;28,000+ products across every room type at launch</td>
                             </tr>
                             <tr>
