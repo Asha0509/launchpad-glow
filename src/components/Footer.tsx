@@ -36,7 +36,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Aesthetics To Spaces Logo" className="h-10 w-10 rounded-lg object-cover" />
+              <img src={logo} alt="Aesthetics To Spaces Logo" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" />
               <span className="font-display text-base font-bold text-foreground">Aesthetics To Spaces</span>
             </a>
             <p className="font-body text-sm text-muted-foreground leading-relaxed mb-5 max-w-xs">

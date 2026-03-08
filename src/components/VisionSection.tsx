@@ -9,7 +9,7 @@ export default function VisionSection() {
   return (
     <section id="vision" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-70" />
+        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-70" style={{ aspectRatio: '16/9' }} loading="eager" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-background/60" />
       </div>
 
