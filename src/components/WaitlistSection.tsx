@@ -79,7 +79,7 @@ function Step1({ form, setForm, emailStatus, setEmailStatus }: {
         </div>
         <div>
           <label className="block text-xs font-body text-muted-foreground mb-1.5">Email address *</label>
-          <input type="email" className={`${field} ${emailStatus.exists ? 'border-amber-500 focus:ring-amber-500/30' : ''}`} placeholder="Sai Srinidhi@example.com" required value={form.email || ''} onChange={e => handleEmailChange(e.target.value)} />
+          <input type="email" className={`${field} ${emailStatus.exists ? 'border-amber-500 focus:ring-amber-500/30' : ''}`} placeholder="SaiSrinidhi@example.com" required value={form.email || ''} onChange={e => handleEmailChange(e.target.value)} />
           {emailStatus.checking && (
             <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
               <Loader2 size={12} className="animate-spin" /> Checking...
