@@ -104,7 +104,7 @@ export default function HeroSection() {
         >
           <Sparkles size={14} className="text-copper" />
           <span className="text-xs font-body text-muted-foreground tracking-wide">
-            Launching March 2026 · 28,000+ Products at Launch
+            Launching March 29, 2026 · 28,000+ Products at Launch
           </span>
         </motion.div>
 

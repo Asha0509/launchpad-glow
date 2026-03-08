@@ -171,7 +171,7 @@ serve(async (req) => {
                         <td style="background: #f8fafa; padding: 15px 20px; border-radius: 8px; margin-bottom: 8px;">
                           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                              <td style="font-size: 15px; color: #374151; padding: 6px 0;">📅 &nbsp;&nbsp;2nd Week of March 2026</td>
+                              <td style="font-size: 15px; color: #374151; padding: 6px 0;">📅 &nbsp;&nbsp;March 29, 2026</td>
                             </tr>
                             <tr>
                               <td style="font-size: 15px; color: #374151; padding: 6px 0;">📍 &nbsp;&nbsp;Starting with Hyderabad, Bengaluru & Mumbai</td>

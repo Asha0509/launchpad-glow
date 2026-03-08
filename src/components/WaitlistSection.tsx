@@ -352,7 +352,7 @@ function SuccessCard({ referralCode, position, userName, isExisting }: { referra
   // Platform-specific share messages with name
   const whatsappText = `Thought you'd find this interesting.
 
-A2S (Aesthetics To Spaces) is India's first AI-powered home design platform — launching March 2026. It lets you design entire rooms with AI assistance, compare prices across all major platforms, and get curated recommendations within your budget.
+A2S (Aesthetics To Spaces) is India's first AI-powered home design platform — launching March 29, 2026. It lets you design entire rooms with AI assistance, compare prices across all major platforms, and get curated recommendations within your budget.
 
 I've secured early access. If you're planning to furnish or redesign anytime soon, this might be worth a look.
 
@@ -361,7 +361,7 @@ ${shareUrl}
 
 — ${firstName}`;
 
-  const twitterText = `Joining @A2S_India — AI-powered home design platform launching March 2026. Cross-platform price comparison and intelligent design recommendations.
+  const twitterText = `Joining @A2S_India — AI-powered home design platform launching March 29, 2026. Cross-platform price comparison and intelligent design recommendations.
 
 Referral code: ${referralCode}`;
 
@@ -369,7 +369,7 @@ Referral code: ${referralCode}`;
 
 A2S is building India's first AI-powered home design infrastructure — enabling cross-platform price intelligence, room-specific product discovery, and AI design consultation.
 
-Launching March 2026. If you're in the home design, real estate, or interior design space, this is worth exploring.
+Launching March 29, 2026. If you're in the home design, real estate, or interior design space, this is worth exploring.
 
 Referral code: ${referralCode}
 ${shareUrl}`;
@@ -441,7 +441,7 @@ ${shareUrl}`;
             </div>
             
             <div className="text-[10px] opacity-70">
-              aestheticstospaces.tech • Launching March 2026
+              aestheticstospaces.tech • Launching March 29, 2026
             </div>
           </div>
         </div>
@@ -636,7 +636,7 @@ export default function WaitlistSection() {
                   <span className="text-gradient-teal">Experience A2S</span>
                 </h2>
                 <p className="font-body text-muted-foreground mb-4">
-                  Join our early access list. Launching March 2026.
+                  Join our early access list. Launching March 29, 2026.
                 </p>
                 <div className="flex items-center justify-center gap-2">
                   <Sparkles size={14} className="text-copper" />

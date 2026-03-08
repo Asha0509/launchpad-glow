@@ -40,7 +40,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ## Launch
 
-March 2026 - Starting with Hyderabad, Bengaluru & Mumbai
+March 29, 2026 - Starting with Hyderabad, Bengaluru & Mumbai
 
 ## Contact
 

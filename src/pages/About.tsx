@@ -154,7 +154,7 @@ export default function About() {
               Join the Journey
             </h2>
             <p className="font-body text-muted-foreground mb-6 max-w-lg mx-auto">
-              We're launching in March 2026. Join the waitlist to get early access and help shape
+              We're launching on March 29, 2026. Join the waitlist to get early access and help shape
               the future of home design in India.
             </p>
             <Link
