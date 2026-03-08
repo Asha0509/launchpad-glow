@@ -143,8 +143,8 @@ export default function Cookies() {
                 </h2>
                 <p className="font-body text-muted-foreground leading-relaxed">
                   For questions about our use of cookies, contact us at:{' '}
-                  <a href="mailto:aestheticstospaces2@gmail.com" className="text-primary hover:underline">
-                    aestheticstospaces2@gmail.com
+                  <a href="mailto:hello@mail.aestheticstospaces.tech" className="text-primary hover:underline">
+                    hello@mail.aestheticstospaces.tech
                   </a>
                 </p>
               </section>

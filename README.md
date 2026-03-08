@@ -45,7 +45,7 @@ March 29, 2026
 ## Contact
 
 - Website: [aestheticstospaces.in](https://aestheticstospaces.in)
-- Email: aestheticstospaces2@gmail.com
+- Email: hello@mail.aestheticstospaces.tech
 - Instagram: [@aestheticstospaces](https://instagram.com/aestheticstospaces)
 - LinkedIn: [Aesthetics To Spaces](https://linkedin.com/company/aesthetics-to-spaces)
 - X: [@A2S_India](https://x.com/A2S_India)

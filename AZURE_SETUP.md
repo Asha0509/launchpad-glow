@@ -166,4 +166,4 @@ For a waitlist, you'll likely never exceed free tier limits.
 
 ## Support
 
-For issues, email: aestheticstospaces2@gmail.com
+For issues, email: hello@mail.aestheticstospaces.tech

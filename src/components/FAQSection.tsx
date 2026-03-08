@@ -29,7 +29,7 @@ const faqs = [
     },
     {
         q: 'Is my data safe?',
-        a: 'Yes. Waitlist data is stored securely. We do not sell your data to any third party. You can request deletion at any time by emailing aestheticstospaces2@gmail.com.',
+        a: 'Yes. Waitlist data is stored securely. We do not sell your data to any third party. You can request deletion at any time by emailing hello@mail.aestheticstospaces.tech.',
     },
     {
         q: 'How do I qualify for beta testing?',
