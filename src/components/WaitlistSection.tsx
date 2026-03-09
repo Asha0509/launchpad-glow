@@ -619,20 +619,38 @@ export default function WaitlistSection() {
     }
   };
 
+  // Detect if navigated directly to #waitlist
+  const [directNav, setDirectNav] = useState(false);
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#waitlist') {
+      setDirectNav(true);
+    }
+  }, []);
+
+  // After all content loads, re-scroll to anchor if hash is present
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      setTimeout(() => {
+        const el = document.getElementById(window.location.hash.replace('#', ''));
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }, 600); // Wait for layout/animation
+    }
+  }, []);
+
   return (
     <section
       id="waitlist"
-      className="relative py-32 min-h-[80vh] md:min-h-[700px]"
-      style={{ scrollMarginTop: '90px' }}
+      className="relative py-32 min-h-screen md:min-h-[700px]"
+      style={{ scrollMarginTop: '100px' }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/20 to-transparent" />
 
       <div className="container mx-auto px-6 relative">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 40 }}
+          initial={directNav ? false : { opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.8 }}
+          transition={{ duration: directNav ? 0.01 : (typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.8) }}
           className="max-w-2xl mx-auto"
         >
 

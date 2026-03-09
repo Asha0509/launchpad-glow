@@ -111,7 +111,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ minHeight: '100vh' }}>
       {/* Lazy-load 3D scene, show fallback image until in view */}
       {show3D ? (
         <Scene3D />
