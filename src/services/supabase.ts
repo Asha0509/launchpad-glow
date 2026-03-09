@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
-export const supabase = SUPABASE_URL && SUPABASE_ANON_KEY 
+export const supabase = SUPABASE_URL && SUPABASE_ANON_KEY
   ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
   : null;
 
@@ -15,12 +15,28 @@ export function isSupabaseConfigured(): boolean {
 // Generate referral code from name
 function generateReferralCode(name: string): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  const namePrefix = name.split(' ')[0].substring(0, 4).toUpperCase().replace(/[^A-Z]/g, '');
+  const namePrefix = name.split(' ')[0].substring(0, 3).toUpperCase().replace(/[^A-Z]/g, '');
   let code = namePrefix || 'A2S';
   while (code.length < 9) {
     code += chars[Math.floor(Math.random() * chars.length)];
   }
   return code.substring(0, 9);
+}
+
+// Generate a referral code guaranteed unique in the DB (retries up to 5 times)
+async function generateUniqueReferralCode(supabaseClient: NonNullable<typeof supabase>, name: string): Promise<string> {
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const code = generateReferralCode(name);
+    const { data } = await supabaseClient
+      .from('waitlist')
+      .select('referral_code')
+      .eq('referral_code', code)
+      .maybeSingle();
+    if (!data) return code; // no collision — safe to use
+  }
+  // Fallback: pure random 9-char code (extremely unlikely collision)
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  return Array.from({ length: 9 }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
 }
 
 export interface WaitlistEntry {
@@ -66,7 +82,7 @@ export async function submitToWaitlist(formData: {
   betaInterest?: boolean;
   notifyLaunch?: boolean;
 }): Promise<{ referralCode: string; position: number; isExisting?: boolean }> {
-  
+
   if (!supabase) {
     throw new Error('Database not configured. Please check your .env file.');
   }
@@ -112,9 +128,9 @@ export async function submitToWaitlist(formData: {
     }
   }
 
-  // Create new entry
-  const referralCode = generateReferralCode(formData.fullName);
-  
+  // Create new entry with a guaranteed-unique referral code
+  const referralCode = await generateUniqueReferralCode(supabase, formData.fullName);
+
   const { error } = await supabase.from('waitlist').insert({
     email: formData.email.toLowerCase(),
     full_name: formData.fullName,
