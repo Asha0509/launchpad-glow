@@ -276,10 +276,10 @@ export default function FeaturesSection() {
           <span className="text-xs font-body text-copper uppercase tracking-[0.2em] mb-4 block">
             What We Offer
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Design Infrastructure,{' '}
             <span className="text-gradient-teal">Not Just Inspiration</span>
-          </h2>
+          </h1>
           <p className="font-body text-muted-foreground max-w-xl mx-auto">
             Aesthetics To Spaces captures how India's next 100 million homeowners furnish their spaces.
           </p>

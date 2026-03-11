@@ -1,3 +1,10 @@
+# 3D Performance Optimizations
+
+## Model and Texture Compression
+- Use .glb with Draco compression for any future 3D models (see gltf-transform, gltf-pipeline).
+- All product images should be WebP (already present in src/assets/products/).
+- Keep texture sizes <= 1024px for hero, 512px/256px for others.
+- Use Blender's decimate modifier or mesh simplification for low-poly mobile models.
 # Aesthetics To Spaces (A2S)
 
 India's first AI-powered home design infrastructure.

@@ -1,17 +1,20 @@
 import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import SocialProofSection from '@/components/SocialProofSection';
-import FeaturesSection from '@/components/FeaturesSection';
-import HowItWorksSection from '@/components/HowItWorksSection';
-import PromptToRoomDemo from '@/components/PromptToRoomDemo';
-import ProductDemoSection from '@/components/ProductDemoSection';
-import BreakdownDemo from '@/components/BreakdownDemo';
-import MarketSection from '@/components/MarketSection';
-import VisionSection from '@/components/VisionSection';
-import WaitlistSection from '@/components/WaitlistSection';
-import FAQSection from '@/components/FAQSection';
-import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
+import { motion } from 'framer-motion';
+import { lazy, Suspense } from 'react';
+const HeroSection = lazy(() => import('@/components/HeroSection'));
+const SocialProofSection = lazy(() => import('@/components/SocialProofSection'));
+const FeaturesSection = lazy(() => import('@/components/FeaturesSection'));
+const HowItWorksSection = lazy(() => import('@/components/HowItWorksSection'));
+const PromptToRoomDemo = lazy(() => import('@/components/PromptToRoomDemo'));
+const ProductDemoSection = lazy(() => import('@/components/ProductDemoSection'));
+const BreakdownDemo = lazy(() => import('@/components/BreakdownDemo'));
+const MarketSection = lazy(() => import('@/components/MarketSection'));
+const VisionSection = lazy(() => import('@/components/VisionSection'));
+const Phase2Section = lazy(() => import('@/components/Phase2Section'));
+const WaitlistSection = lazy(() => import('@/components/WaitlistSection'));
+const FAQSection = lazy(() => import('@/components/FAQSection'));
+const Footer = lazy(() => import('@/components/Footer'));
+const BackToTop = lazy(() => import('@/components/BackToTop'));
 import { ParallaxFloat } from '@/components/ParallaxSection';
 
 const Index = () => {
@@ -35,19 +38,38 @@ const Index = () => {
       </ParallaxFloat>
 
       <Navbar />
-      <HeroSection />
-      <SocialProofSection />
-      <FeaturesSection />
-      <HowItWorksSection />
-      <PromptToRoomDemo />
-      <ProductDemoSection />
-      <BreakdownDemo />
-      <MarketSection />
-      <VisionSection />
-      <WaitlistSection />
-      <FAQSection />
-      <Footer />
-      <BackToTop />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+        <HeroSection />
+        <SocialProofSection />
+        <FeaturesSection />
+        <HowItWorksSection />
+        <PromptToRoomDemo />
+        <ProductDemoSection />
+        <BreakdownDemo />
+        <MarketSection />
+        <VisionSection />
+
+        {/* Phase 2 Coming Soon Teaser with animation */}
+        <div className="relative w-full flex justify-center items-center mt-16 mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.7 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <div className="bg-gradient-to-r from-copper/10 via-primary/10 to-teal-light/10 rounded-xl px-6 py-4 shadow-lg border border-copper/30">
+              <span className="font-display text-2xl md:text-3xl font-bold text-copper mr-2">Phase 2: Execution Intelligence</span>
+              <span className="font-body text-lg text-muted-foreground font-medium">— Coming Soon</span>
+            </div>
+          </motion.div>
+        </div>
+
+        <Phase2Section />
+        <WaitlistSection />
+        <FAQSection />
+        <Footer />
+        <BackToTop />
+      </Suspense>
     </main>
   );
 };

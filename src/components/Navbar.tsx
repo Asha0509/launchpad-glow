@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import logo from '@/assets/logo.jpeg';
+import logo from '@/assets/logo.webp';
 
 const navItems = [
   { label: 'Product', href: '#product' },
@@ -30,7 +30,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex items-center justify-between pl-2 pr-6">
         <a href="#" className="flex items-center gap-3">
-          <img src={logo} alt="A2S Logo" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" />
+          <img src={logo} alt="A2S Logo" width={40} height={40} className="h-10 w-10 rounded-lg object-cover" loading="lazy" />
           <span className="font-display text-xl font-bold text-foreground">
             Aesthetics To Spaces
           </span>

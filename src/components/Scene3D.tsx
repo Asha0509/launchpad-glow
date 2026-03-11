@@ -1,4 +1,4 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Edges } from '@react-three/drei';
 import * as THREE from 'three';
@@ -225,15 +225,46 @@ function Particles() {
 }
 
 export default function Scene3D() {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    let animationId: number | null = null;
+    let lastFrame = 0;
+    const targetFPS = 30;
+    const frameDuration = 1000 / targetFPS;
+    function animate(now: number) {
+      if (now - lastFrame >= frameDuration) {
+        lastFrame = now;
+        // Render logic would go here if using manual render
+      }
+      animationId = requestAnimationFrame(animate);
+    }
+    if (!document.hidden) {
+      animationId = requestAnimationFrame(animate);
+    }
+    function onVisibility() {
+      if (document.hidden && animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+      } else if (!document.hidden && !animationId) {
+        animationId = requestAnimationFrame(animate);
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibility);
+    return () => {
+      if (animationId) cancelAnimationFrame(animationId);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+  }, []);
   return (
-    <div className="absolute inset-0 z-0 hidden md:block" style={{ minHeight: '100vh', contain: 'layout' }}>
-      <Canvas camera={{ position: [3.5, 1.8, 5.5], fov: 42 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[5, 5, 5]} intensity={0.2} color="#1a7a8a" />
-        <pointLight position={[-5, -3, 3]} intensity={0.15} color="#b87a4a" />
+    <div className="absolute inset-0 z-0 hidden md:block" style={{ minHeight: '100vh', contain: 'layout' }} ref={canvasRef}>
+      <Canvas camera={{ position: [3.5, 1.8, 5.5], fov: 42 }} dpr={[1, 1.5]}> {/* Lower dpr for mobile perf */}
+        {/* Use only one light, no shadows for mobile perf */}
+        <ambientLight intensity={0.7} />
+        {/* <directionalLight position={[5, 5, 5]} intensity={0.3} castShadow={false} /> */}
         <WireframeRoom />
         <DataGrid />
         <Particles />
+        {/* If you add repeated objects, use InstancedMesh for performance */}
       </Canvas>
     </div>
   );

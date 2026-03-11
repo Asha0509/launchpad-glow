@@ -3,18 +3,18 @@ import { useRef, useState } from 'react';
 import { Bed, Sofa, ChefHat, IndianRupee, Palette, Wand2, ArrowRight, Star } from 'lucide-react';
 
 // Product images
-import sofaImg from '@/assets/products/sofa.jpg';
-import coffeeTableImg from '@/assets/products/coffee-table.jpg';
-import lampImg from '@/assets/products/lamp.jpg';
-import rugImg from '@/assets/products/rug.jpg';
-import tvUnitImg from '@/assets/products/tv-unit.jpg';
-import bedImg from '@/assets/products/bed.jpg';
-import mattressImg from '@/assets/products/mattress.jpg';
-import nightstandImg from '@/assets/products/nightstand.jpg';
-import wardrobeImg from '@/assets/products/wardrobe.jpg';
-import kitchenCabinetImg from '@/assets/products/kitchen-cabinet.jpg';
-import countertopImg from '@/assets/products/countertop.jpg';
-import chimneyImg from '@/assets/products/chimney.jpg';
+import sofaImg from '@/assets/products/sofa.webp';
+import coffeeTableImg from '@/assets/products/coffee-table.webp';
+import lampImg from '@/assets/products/lamp.webp';
+import rugImg from '@/assets/products/rug.webp';
+import tvUnitImg from '@/assets/products/tv-unit.webp';
+import bedImg from '@/assets/products/bed.webp';
+import mattressImg from '@/assets/products/mattress.webp';
+import nightstandImg from '@/assets/products/nightstand.webp';
+import wardrobeImg from '@/assets/products/wardrobe.webp';
+import kitchenCabinetImg from '@/assets/products/kitchen-cabinet.webp';
+import countertopImg from '@/assets/products/countertop.webp';
+import chimneyImg from '@/assets/products/chimney.webp';
 
 const rooms = [
   { id: 'living', label: 'Living Room', icon: Sofa },

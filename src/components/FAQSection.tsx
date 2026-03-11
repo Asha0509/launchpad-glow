@@ -5,35 +5,43 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
     {
         q: 'Is Aesthetics To Spaces free to use?',
-        a: 'Yes — early access is completely free. Our core discovery and price comparison tools will always have a free tier. We may introduce optional premium features (AI room planning, curated design packages) in the future.',
+        a: 'Yes — early access is completely free. Our core discovery and price comparison tools will always have a free tier. Optional premium features, such as advanced AI planning and execution management, may be introduced in the future.',
     },
     {
-        q: 'When does it launch?',
-        a: 'We launch on March 29, 2026. Waitlist members will get access 1 week early, before the public.',
+        q: 'What is Phase 2 and what does it offer?',
+        a: 'Phase 2 introduces execution intelligence: video-to-3D spatial reconstruction, AR live view, verified sourcing, artisan cloud, Vastu audit, and turnkey execution management. These features enable users to move from design discovery to full project delivery within a single platform.',
+    },
+    {
+        q: 'When does Phase 2 launch?',
+        a: 'Phase 2 features will be rolled out progressively after our initial launch. Waitlist members and early users will receive priority access and the opportunity to shape feature development.',
     },
     {
         q: 'How does the AI Design Assistant work?',
-        a: 'You describe your room in plain language — style, budget, dimensions (optional) — and our AI curates a complete product shortlist from 28,000+ verified items, sorted by price, rating, and aesthetic match.',
+        a: 'Describe your room in plain language — style, budget, dimensions (optional) — and our AI curates a complete product shortlist from 28,000+ verified items, sorted by price, rating, and aesthetic match.',
     },
     {
-        q: 'Which platforms do you compare prices across?',
-        a: 'At launch: Amazon, Pepperfry, Urban Ladder, IKEA India, Flipkart, and select direct-to-consumer brands. We add new platforms every sprint based on user demand.',
+        q: 'How does the 3D spatial reconstruction work?',
+        a: 'You can record a walkthrough of your room, and our system will generate a fully navigable 3D model. This allows you to visualize and validate furniture placement before making any purchase decisions.',
     },
     {
-        q: 'How does the referral program work?',
-        a: 'Every waitlist member gets a unique referral code. Each person who joins using your code moves you 2 spots forward in the queue. You can see your live position and refer friends via WhatsApp, Twitter/X, or LinkedIn.',
+        q: 'What is AR Live View?',
+        a: 'AR Live View enables you to use your phone to place real catalog products in your space virtually, providing an accurate and interactive preview before you buy.',
     },
     {
-        q: 'Do you sell furniture directly?',
-        a: 'No — we are a discovery and price intelligence layer, not a retailer. We surface the best options and link you directly to the retailer to complete the purchase. This keeps pricing honest and selection wide.',
+        q: 'How does verified sourcing and the artisan cloud benefit me?',
+        a: 'Our sourcing engine scans 50+ verified vendors and includes a vetted artisan marketplace. This ensures you receive the best options on price, quality, and lead time, whether you choose retail or custom fabrication.',
+    },
+    {
+        q: 'What is turnkey execution management?',
+        a: 'Turnkey execution management provides end-to-end project oversight, including procurement, installation, and project management. This service is designed to deliver a seamless experience from design to delivery.',
     },
     {
         q: 'Is my data safe?',
-        a: 'Yes. Waitlist data is stored securely. We do not sell your data to any third party. You can request deletion at any time by emailing hello@mail.aestheticstospaces.tech.',
+        a: 'Yes. All user data is stored securely and is never sold to third parties. You may request data deletion at any time by contacting our support team.',
     },
     {
-        q: 'How do I qualify for beta testing?',
-        a: 'Check "Interested in beta testing" in the waitlist form. We will hand-pick beta households based on diverse room types, budgets, and cities to ensure we test across real use cases. We\'ll email you if selected.',
+        q: 'How do I qualify for beta testing or early access to new features?',
+        a: 'Indicate your interest in beta testing on the waitlist form. We select participants based on a range of criteria to ensure diverse feedback and robust testing. Selected users will be contacted via email.',
     },
 ];
 

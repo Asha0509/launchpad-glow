@@ -2,11 +2,11 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { Wand2, ChevronRight, Check, Sparkles } from 'lucide-react';
 
-import sofaImg from '@/assets/products/sofa.jpg';
-import coffeeTableImg from '@/assets/products/coffee-table.jpg';
-import lampImg from '@/assets/products/lamp.jpg';
-import rugImg from '@/assets/products/rug.jpg';
-import tvUnitImg from '@/assets/products/tv-unit.jpg';
+import sofaImg from '@/assets/products/sofa.webp';
+import coffeeTableImg from '@/assets/products/coffee-table.webp';
+import lampImg from '@/assets/products/lamp.webp';
+import rugImg from '@/assets/products/rug.webp';
+import tvUnitImg from '@/assets/products/tv-unit.webp';
 
 const promptText = 'Design a modern living room under ₹2 lakhs, Scandinavian style';
 
@@ -246,7 +246,7 @@ export default function PromptToRoomDemo() {
                           className="rounded-lg overflow-hidden border border-border bg-card"
                         >
                           <div className="aspect-square overflow-hidden">
-                            <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
+                            <img src={p.img} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
                           </div>
                           <div className="p-1.5">
                             <div className="text-[9px] font-body text-foreground truncate">{p.name.split(' ').slice(0, 2).join(' ')}</div>
@@ -287,7 +287,7 @@ export default function PromptToRoomDemo() {
                           className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/30 transition-colors"
                         >
                           <div className="w-10 h-10 rounded-lg overflow-hidden border border-border shrink-0">
-                            <img src={p.img} alt={p.name} className="w-full h-full object-cover" />
+                            <img src={p.img} alt={p.name} className="w-full h-full object-cover" loading="lazy" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="text-xs font-display font-semibold text-foreground truncate">{p.name}</div>

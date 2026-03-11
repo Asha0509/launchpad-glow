@@ -1,9 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Sparkles, Clock } from 'lucide-react';
-import { useRef, useState, useEffect } from 'react';
 
-import Scene3D from './Scene3D';
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense } from 'react';
+const Scene3D = lazy(() => import('./Scene3D').then(module => ({ default: module.default })));
+import heroBg from '../assets/hero-bg.webp';
+import { useIsMobile } from '../hooks/use-mobile';
+import { useRef, useState, useEffect } from 'react';
 
 function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -91,9 +93,35 @@ function CountdownTimer() {
 }
 
 export default function HeroSection() {
+  const isMobile = useIsMobile();
+  const [show3D, setShow3D] = useState(false);
+
+  // Show 3D immediately on desktop, require click on mobile
+  useEffect(() => {
+    if (!isMobile) setShow3D(true);
+  }, [isMobile]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ minHeight: '100vh' }}>
-      <Scene3D />
+      {/* 3D Scene or Static Fallback */}
+      {!isMobile && show3D && (
+        <Suspense fallback={<div style={{height: 400}} />}> <Scene3D /> </Suspense>
+      )}
+      {isMobile && !show3D && (
+        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center" style={{ minHeight: '100vh', background: 'linear-gradient(to bottom, #f8fafc 60%, #fff 100%)' }}>
+          <img src={heroBg} alt="Preview" className="rounded-xl shadow-lg w-full max-w-md mx-auto" style={{objectFit:'cover', maxHeight: 320}} />
+          <button
+            className="mt-6 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-display font-semibold text-base shadow-lg hover:bg-teal-light transition-all duration-300"
+            onClick={() => setShow3D(true)}
+            aria-label="Enter 3D Experience"
+          >
+            Enter 3D Experience
+          </button>
+        </div>
+      )}
+      {isMobile && show3D && (
+        <Suspense fallback={<div style={{height: 400}} />}> <Scene3D /> </Suspense>
+      )}
 
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/20 to-background z-[1]" />
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent z-[1]" />

@@ -2,11 +2,11 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ArrowDown, Layers, TrendingDown, ExternalLink, Star } from 'lucide-react';
 
-import sofaImg from '@/assets/products/sofa.jpg';
-import coffeeTableImg from '@/assets/products/coffee-table.jpg';
-import lampImg from '@/assets/products/lamp.jpg';
-import rugImg from '@/assets/products/rug.jpg';
-import tvUnitImg from '@/assets/products/tv-unit.jpg';
+import sofaImg from '@/assets/products/sofa.webp';
+import coffeeTableImg from '@/assets/products/coffee-table.webp';
+import lampImg from '@/assets/products/lamp.webp';
+import rugImg from '@/assets/products/rug.webp';
+import tvUnitImg from '@/assets/products/tv-unit.webp';
 
 interface PriceEntry {
   platform: string;
@@ -107,7 +107,7 @@ function ProductBreakdownCard({ product, index }: { product: BreakdownProduct; i
     >
       <div className="flex items-center gap-3 p-3">
         <div className="w-12 h-12 rounded-lg overflow-hidden border border-border shrink-0">
-          <img src={product.img} alt={product.name} className="w-full h-full object-cover" />
+          <img src={product.img} alt={product.name} className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="flex-1 min-w-0">
           <div className="text-xs font-display font-semibold text-foreground truncate">{product.name}</div>

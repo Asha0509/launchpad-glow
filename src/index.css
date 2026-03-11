@@ -1,3 +1,28 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 640px) {
+  html, body {
+    font-size: 16px;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .rounded-xl, .rounded-2xl {
+    border-radius: 1rem;
+  }
+  .text-4xl {
+    font-size: 2rem;
+  }
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  .text-7xl, .text-8xl {
+    font-size: 3rem;
+  }
+}
 /* Fonts loaded via index.html preload for better CLS */
 
 @tailwind base;
@@ -22,10 +47,10 @@
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 15% 93%;
-    --muted-foreground: 210 10% 45%;
+    --muted-foreground: 210 15% 30%;
 
     --accent: 192 40% 94%;
-    --accent-foreground: 192 60% 22%;
+    --accent-foreground: 192 60% 18%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;

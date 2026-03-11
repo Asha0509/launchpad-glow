@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Sparkles, Target, Heart, Zap, Users } from 'lucide-react';
-import logo from '@/assets/logo.jpeg';
+import logo from '@/assets/logo.webp';
 
 const values = [
   {
@@ -46,7 +46,7 @@ export default function About() {
           {/* Hero */}
           <div className="text-center mb-16">
             <div className="flex justify-center mb-6">
-              <img src={logo} alt="Aesthetics To Spaces" className="w-20 h-20 rounded-2xl object-cover" />
+              <img src={logo} alt="Aesthetics To Spaces" className="w-20 h-20 rounded-2xl object-cover" loading="lazy" />
             </div>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
               About <span className="text-gradient-teal">Aesthetics To Spaces</span>

@@ -69,17 +69,16 @@ function Step1({ form, setForm, emailStatus, setEmailStatus }: {
   };
 
   const field = 'px-4 py-3 w-full rounded-xl bg-background border border-border text-foreground font-body text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all';
-
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-body text-muted-foreground mb-1.5">Full name *</label>
-          <input className={field} placeholder="Sai Srinidhi" required value={form.fullName || ''} onChange={e => setForm({ ...form, fullName: e.target.value })} />
+          <input className={field} placeholder="Enter your name" required value={form.fullName || ''} onChange={e => setForm({ ...form, fullName: e.target.value })} />
         </div>
         <div>
           <label className="block text-xs font-body text-muted-foreground mb-1.5">Email address *</label>
-          <input type="email" className={`${field} ${emailStatus.exists ? 'border-amber-500 focus:ring-amber-500/30' : ''}`} placeholder="SaiSrinidhi@example.com" required value={form.email || ''} onChange={e => handleEmailChange(e.target.value)} />
+          <input type="email" className={`${field} ${emailStatus.exists ? 'border-amber-500 focus:ring-amber-500/30' : ''}`} placeholder="Enter your email" required value={form.email || ''} onChange={e => handleEmailChange(e.target.value)} />
           {emailStatus.checking && (
             <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
               <Loader2 size={12} className="animate-spin" /> Checking...
@@ -95,12 +94,12 @@ function Step1({ form, setForm, emailStatus, setEmailStatus }: {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-body text-muted-foreground mb-1.5">Phone <span className="text-muted-foreground/60">(optional)</span></label>
-          <input className={field} placeholder="+91 98765 43210" value={form.phone || ''} onChange={e => setForm({ ...form, phone: e.target.value })} />
+          <input className={field} placeholder="Enter your phone number" value={form.phone || ''} onChange={e => setForm({ ...form, phone: e.target.value })} />
         </div>
         <div>
-          <label className="block text-xs font-body text-muted-foreground mb-1.5">Country</label>
+          <label htmlFor="country" className="block text-xs font-body text-muted-foreground mb-1.5">Country</label>
           <div className="relative">
-            <select className={`${field} appearance-none pr-10`} value={form.country || ''} onChange={e => setForm({ ...form, country: e.target.value })}>
+            <select id="country" className={`${field} appearance-none pr-10`} value={form.country || ''} onChange={e => setForm({ ...form, country: e.target.value })}>
               <option value="">Select country</option>
               {COUNTRIES.map(c => <option key={c}>{c}</option>)}
             </select>
@@ -110,7 +109,7 @@ function Step1({ form, setForm, emailStatus, setEmailStatus }: {
       </div>
       <div>
         <label className="block text-xs font-body text-muted-foreground mb-1.5">City</label>
-        <input className={field} placeholder="Mumbai, Bengaluru, Delhi…" value={form.city || ''} onChange={e => setForm({ ...form, city: e.target.value })} />
+        <input className={field} placeholder="Enter your city" value={form.city || ''} onChange={e => setForm({ ...form, city: e.target.value })} />
       </div>
     </div>
   );
@@ -210,9 +209,9 @@ function Step3({ form, setForm }: { form: WaitlistFormData; setForm: (f: Waitlis
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-body text-muted-foreground mb-1.5">How did you hear about us?</label>
+          <label htmlFor="referralSource" className="block text-xs font-body text-muted-foreground mb-1.5">How did you hear about us?</label>
           <div className="relative">
-            <select className={`${field} appearance-none pr-10`} value={form.referralSource || ''} onChange={e => setForm({ ...form, referralSource: e.target.value })}>
+            <select id="referralSource" className={`${field} appearance-none pr-10`} value={form.referralSource || ''} onChange={e => setForm({ ...form, referralSource: e.target.value })}>
               <option value="">Select one</option>
               {['Instagram', 'LinkedIn', 'Twitter/X', 'WhatsApp', 'Friend / Referral', 'LinkedIn Article', 'Google Search', 'Other'].map(o => <option key={o}>{o}</option>)}
             </select>
@@ -641,7 +640,7 @@ export default function WaitlistSection() {
     <section
       id="waitlist"
       className="relative py-32 min-h-screen md:min-h-[700px]"
-      style={{ scrollMarginTop: '100px' }}
+      style={{ scrollMarginTop: '100px', position: 'relative' }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/20 to-transparent" />
 
@@ -658,12 +657,14 @@ export default function WaitlistSection() {
             <>
               {/* Header */}
               <div className="text-center mb-10">
-                <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
                   Be First to{' '}
                   <span className="text-gradient-teal">Experience A2S</span>
-                </h2>
+                </h1>
                 <p className="font-body text-muted-foreground mb-4">
-                  Join our early access list. Launching March 29, 2026.
+                  Join our early access list and help shape the future of home design.<br />
+                  <span className="font-semibold text-foreground">Get exclusive updates, early access, and a chance to influence Phase 2 features.</span>
+                  <br />Launching March 29, 2026.
                 </p>
                 <div className="flex items-center justify-center gap-2">
                   <Sparkles size={14} className="text-copper" />
